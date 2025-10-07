@@ -1,0 +1,19 @@
+nav {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  gap: 20px; /* Espaço entre os links */
+  background-color: #ffffff;
+  padding: 15px;
+  border-bottom: 2px solid #eee;
+}
+
+nav a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #0056b3;
+}

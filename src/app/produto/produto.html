@@ -1,0 +1,31 @@
+<h2>Produtos</h2>
+
+<!-- Verifica se há produtos -->
+<div *ngIf="produtos.length === 0">
+  Nenhum produto disponível no momento
+</div>
+
+<!-- Lista de produtos -->
+<table *ngIf="produtos.length > 0" border="1" cellspacing="0" cellpadding="5">
+  <tr>
+    <th>Nome</th>
+    <th>Preço</th>
+    <th>Descrição</th>
+    <th>Status</th>
+    <th>Ação</th>
+  </tr>
+  <tr *ngFor="let produto of produtos">
+    <td>{{ produto.nome }}</td>
+    <td>R$ {{ produto.preco }}</td>
+    <td>{{ produto.descricao }}</td>
+    <td>{{ produto.emEstoque ? 'Em estoque' : 'Indisponível' }}</td>
+    <td>
+      <button 
+        [disabled]="!produto.emEstoque"
+        [ngStyle]="{'background-color': produto.emEstoque ? 'blue' : 'gray', 'color': 'white', 'cursor': produto.emEstoque ? 'pointer' : 'not-allowed'}"
+        (click)="comprarProduto(produto.id)">
+        Comprar
+      </button>
+    </td>
+  </tr>
+</table>

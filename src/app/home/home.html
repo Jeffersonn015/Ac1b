@@ -1,0 +1,8 @@
+
+<button (click)="toggleBanner()">
+  {{ showBanner ? 'Ocultar Banner' : 'Mostrar Banner' }}
+</button>
+
+<div *ngIf="showBanner">
+  <app-banner></app-banner>
+</div>
